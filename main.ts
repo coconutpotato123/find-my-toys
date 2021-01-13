@@ -1,3 +1,4 @@
+
  //score
  info.player1.setScore(0)
 //overlap
@@ -275,6 +276,13 @@ let human2 = sprites.create(img`
     . . . f f 1 d 1 d 1 1 f f . . .
     . . . . . f f f b b f . . . . .
 `, SpriteKind.Enemy)
+//follow player
+otherdog1.follow(player1, 20)
+otherdog2.follow(player1, 20)
+cat1.follow(player1, 20)
+cat2.follow(player1, 20)
+human1.follow(player1, 20)
+human2.follow(player1, 20)
 // Controller
 controller.moveSprite(player1)
 scene.cameraFollowSprite(player1)
