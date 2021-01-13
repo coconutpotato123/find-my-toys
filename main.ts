@@ -252,7 +252,7 @@ let human1 = sprites.create(img`
     . . . f f f f f f f f . . . . . 
     . . . . . f f . . f f . . . . . 
     `, SpriteKind.Enemy)
-//follow sprite
+// follow sprite
 otherdog1.follow(player1, 15)
 otherdog2.follow(player1, 15)
 cat1.follow(player1, 15)
