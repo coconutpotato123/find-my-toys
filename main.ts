@@ -1,20 +1,14 @@
-
- //score
- info.player1.setScore(0)
-//overlap
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Food, function (sprite, otherSprite) {
     otherSprite.destroy()
     sprite.startEffect(effects.hearts, 1000)
     sprite.say("A TOY!", 1000)
-    info.changeScoreBy(+1)
 })
-
+// Overlap
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSprite) {
     sprite.startEffect(effects.trail, 1000)
     sprite.say("OWIE!:(", 1000)
     game.over(false)
 })
-//Win game
 // Create Sprite
 let player1 = sprites.create(img`
     . . . . . . . . . . . . . . . . 
@@ -258,31 +252,12 @@ let human1 = sprites.create(img`
     . . . f f f f f f f f . . . . . 
     . . . . . f f . . f f . . . . . 
     `, SpriteKind.Enemy)
-let human2 = sprites.create(img`
-    . . . . . . . f f . . . . . . .
-    . . . . . f f 3 3 f f . . . . .
-    . . . . f 3 3 3 3 3 3 f . . . .
-    . . . f e 3 3 3 3 3 3 3 f . . .
-    . . f b 3 3 3 3 3 3 3 3 b f . .
-    . f e 3 3 3 3 3 3 3 3 3 3 e f .
-    . f 3 3 e b 3 e e 3 b e 3 3 f .
-    . f b 3 f f e e e e f f 3 b f .
-    f f b b f b f e e f b f b b f f
-    f b b b e 1 f 4 4 f 1 e b b b f
-    . f b b e e 4 4 4 4 4 f b b f .
-    . . f 4 4 4 e d d d b f e f . .
-    . . f e 4 4 e d d d d c 4 e . .
-    . . . f e e d d b d b b f e . .
-    . . . f f 1 d 1 d 1 1 f f . . .
-    . . . . . f f f b b f . . . . .
-`, SpriteKind.Enemy)
-//follow player
-otherdog1.follow(player1, 20)
-otherdog2.follow(player1, 20)
-cat1.follow(player1, 20)
-cat2.follow(player1, 20)
-human1.follow(player1, 20)
-human2.follow(player1, 20)
+//follow sprite
+otherdog1.follow(player1, 15)
+otherdog2.follow(player1, 15)
+cat1.follow(player1, 15)
+cat2.follow(player1, 15)
+human1.follow(player1, 15)
 // Controller
 controller.moveSprite(player1)
 scene.cameraFollowSprite(player1)
